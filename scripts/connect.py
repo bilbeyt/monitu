@@ -1,9 +1,10 @@
 from robobrowser import RoboBrowser
+from getpass import getpass
 
 url = 'https://portal.itu.edu.tr'
 
 username = input("Username: ")
-password = input("Password: ")
+password = getpass("Password: ")
 
 browser = RoboBrowser(history=True)
 browser.open(url)
@@ -15,14 +16,14 @@ signin["ctl00$ContentPlaceHolder1$btnLogin"].value = "Giriş"
 
 browser.submit_form(signin)
 
-transcript_url = ("http://ssb.sis.itu.edu.tr:9000
-        /pls/PROD/p_transcript.p_id_response")
+transcript_url = ("http://ssb.sis.itu.edu.tr:9000"
+                  "/pls/PROD/p_transcript.p_id_response")
 
 browser.open(transcript_url)
 pin = input("PIN: ")
 
-pin_form = browser.get_form(action="http://ssb.sis.itu.edu.tr:9000
-        /pls/PROD/twbkwbis.P_ValLogin")
+pin_form = browser.get_form(action="http://ssb.sis.itu.edu.tr:9000"
+                                   "/pls/PROD/twbkwbis.P_ValLogin")
 pin_form["PIN"].value = pin
 pin_form["ButtonSelected"].value = ""
 
