@@ -1,0 +1,8 @@
+EMAIL_PORT = [smtp port]
+EMAIL_HOST = "[outgoing email server address]"
+EMAIL_HOST_USER = "[email | username@domain.com]"
+EMAIL_HOST_PASSWORD = "[password]"
+DEFAULT_FROM_EMAIL = "[sender email address]"
+SERVER_EMAIL = "[sender email address]"
+EMAIL_USE_TLS = True
+
