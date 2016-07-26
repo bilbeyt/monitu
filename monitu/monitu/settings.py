@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,7 +125,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_AUTO_LOGIN = True
+
+# Crispy-Forms settings
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Import local settings
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
