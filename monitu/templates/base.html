@@ -41,8 +41,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Genel Görünüm</a></li>
-            <li class="active"><a href="#about">Dönem Görünümü</a></li>
+            <li class="active"><a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Genel Görünüm</a></li>
+            <li class="active"><a href="#about"><i class="fa fa-map-o" aria-hidden="true"></i>Dönem Görünümü</a></li>
             <!--<li class="dropdown">-->
               <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
               <!--<ul class="dropdown-menu">-->
@@ -58,14 +58,16 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
                  <form class="navbar-form" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="e-posta">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                        <input type="text" class="form-control" name="username" placeholder="İTÜ/Mail">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="password" placeholder="parola">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input type="text" class="form-control" name="password" placeholder="Parola">
                     </div>
-                    <button type="submit" class="btn btn-sm btn-primary">Giriş Yap</button>
-                    <button class="btn btn-sm btn-default">?</button>
+                    <button type="submit" class="btn btn btn-primary"><i class="fa fa-lg fa-sign-in" aria-hidden="true"></i></button>
+                    <button class="btn btn btn-default">?</button>
                 </form>
           </ul>
         </div><!--/.nav-collapse -->
@@ -83,23 +85,33 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 text-left" style="margin-top: 20px;">
+                <div class="col-md-3 text-left" style="margin-top: 20px;">
                     <p style="color: white;"><span style="font-family: 'Laila', serif;">monitu</span> ~ 2016</p>
                 </div>
-                <div class="col-md-4 text-center" style="margin-top: 20px;">
-                    <a href="#" style="color: white; margin-right: 16px;"><b>hakkında</b></a>
+                <div class="col-md-6 text-center" style="margin-top: 20px;">
+                    <a href="#" style="color: white; margin-right: 16px;"><b><i class="fa fa-lg fa-pied-piper" aria-hidden="true"></i>Hakkında</b></a>
                     <span style="color: white; margin-right: 16px;">¦</span>
-                    <a href="#" style="color: white; margin-right: 16px;"><b>sss</b></a>
+                    <a href="#" style="color: white; margin-right: 16px;"><b><i class="fa fa-lg fa-question-circle-o" aria-hidden="true"></i>SSS</b></a>
                     <span style="color: white; margin-right: 16px;">¦</span>
-                    <a href="#" role="button" class="popovers" data-toggle="popover" title="Other Available Languages" data-placement="top" data-content="
+                    <a role="button" class="popovers" data-toggle="popover" title="Other Available Languages" data-placement="top" data-content="
                         <ul>
                             <li>English</li>
                         </ul>
                         <p>Bildiğiniz başka bir dil mi var? <a>hello</a></p>
-                        " data-original-title="" style="color: white;"><b>use in another language</b></a>
+                        " data-original-title="" style="color: white;"><b><i class="fa fa-lg fa-language" aria-hidden="true"></i>Use in another language</b></a>
                 </div>
-                <div class="col-md-4 text-right" style="margin-top: 20px;">
-                    <a role="button" class="popovers" data-toggle="popover" title="Bir geliştirici olarak da yalnızca bir kullanıcı olarak da monitu'ya destek olabilirsiniz." data-placement="top" data-content="1-2-3 <ul><li>asdf</li><li>bsdf</li></ul>" data-original-title="hello 1-2-3" style="color: white;"><b>katkı vermek istiyorum!</b></a>
+                <div class="col-md-3 text-right" style="margin-top: 20px;">
+                    <a role="button"
+                       class="popovers"
+                       data-toggle="popover"
+                       title="Bir geliştirici olarak da yalnızca bir kullanıcı olarak da monitu'ya destek olabilirsiniz."
+                       data-placement="top"
+                       data-html="true"
+                       data-original-title="hello 1-2-3"
+                       style="color: white;"
+                       data-content="<div><p><i class='fa fa-fw fa-github' aria-hidden='true'></i> asdf</p><p><i class='fa fa-fw fa-coffee' aria-hidden='true'></i> bsdf</p></div>">
+                           <b><i class="fa fa-lg fa-cubes" aria-hidden="true"></i>Katkı vermek istiyorum!</b>
+                    </a>
                 </div>
             </div>
         </div>
