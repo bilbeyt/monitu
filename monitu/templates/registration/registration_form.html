@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+{% block title %}
+    Hesap Oluştur
+{% endblock title %}
+
+{% block bodytitle %}
+    Hesap Oluştur
+{% endblock bodytitle %}
+
 {% block content %}
     <form action="." method="post">
         {% csrf_token %}
