@@ -17,8 +17,10 @@
     <!-- Bootstrap core CSS -->
     <link href={% static "css/bootstrap.css" %} rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href={% static "css/navbar-fixed-top.css" %} rel="stylesheet">
+
+    <!--Font Awesome CDN-->
+    <script src="https://use.fontawesome.com/a92223afb3.js"></script>
 
   </head>
 
@@ -39,35 +41,69 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            <li class="active"><a href="#">Genel Görünüm</a></li>
+            <li class="active"><a href="#about">Dönem Görünümü</a></li>
+            <!--<li class="dropdown">-->
+              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+              <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li class="dropdown-header">Nav header</li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--<li><a href="#">One more separated link</a></li>-->
+              <!--</ul>-->
+            <!--</li>-->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Default</a></li>
-            <li><a href="">Static top</a></li>
-            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                 <form class="navbar-form" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="e-posta">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="password" placeholder="parola">
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary">Giriş Yap</button>
+                    <button class="btn btn-sm btn-default">?</button>
+                </form>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="col-md-6 col-md-offset-3">
-        {% block content %} {% endblock %}
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <p class="lead">Başlık</p>
+            <hr>
+            {% block content %} {% endblock %}
+        </div>
     </div>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-left" style="margin-top: 20px;">
+                    <p style="color: white;"><span style="font-family: 'Laila', serif;">monitu</span> ~ 2016</p>
+                </div>
+                <div class="col-md-4 text-center" style="margin-top: 20px;">
+                    <a href="#" style="color: white; margin-right: 16px;"><b>hakkında</b></a>
+                    <span style="color: white; margin-right: 16px;">¦</span>
+                    <a href="#" style="color: white; margin-right: 16px;"><b>sss</b></a>
+                    <span style="color: white; margin-right: 16px;">¦</span>
+                    <a href="#" role="button" class="popovers" data-toggle="popover" title="Other Available Languages" data-placement="top" data-content="
+                        <ul>
+                            <li>English</li>
+                        </ul>
+                        <p>Bildiğiniz başka bir dil mi var? <a>hello</a></p>
+                        " data-original-title="" style="color: white;"><b>use in another language</b></a>
+                </div>
+                <div class="col-md-4 text-right" style="margin-top: 20px;">
+                    <a role="button" class="popovers" data-toggle="popover" title="Bir geliştirici olarak da yalnızca bir kullanıcı olarak da monitu'ya destek olabilirsiniz." data-placement="top" data-content="1-2-3 <ul><li>asdf</li><li>bsdf</li></ul>" data-original-title="hello 1-2-3" style="color: white;"><b>katkı vermek istiyorum!</b></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -76,5 +112,6 @@
     <script src={% static "js/jquery-1.10.2.min.js" %}></script>
     <!--<script>window.jQuery || document.write('<script src="{% static "js/jquery-1.10.2.min.js" %}><\/script>')</script>-->
     <script src={% static "js/bootstrap.min.js" %}></script>
+    <script src={% static "js/custom.js" %}></script>
   </body>
 </html>
