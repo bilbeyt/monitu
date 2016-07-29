@@ -41,8 +41,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Genel Görünüm</a></li>
-            <li class="active"><a href="#about"><i class="fa fa-map-o" aria-hidden="true"></i>Dönem Görünümü</a></li>
+            {% if user.is_authenticated %}
+                <li class="active"><a href="#"><i class="fa fa-lg fa-graduation-cap" aria-hidden="true"></i>Genel Görünüm</a></li>
+                <li class=""><a href="#about"><i class="fa fa-lg fa-map-o" aria-hidden="true"></i>Dönem Görünümü</a></li>
+            {% else %}
+
+            {% endif %}
             <!--<li class="dropdown">-->
               <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
               <!--<ul class="dropdown-menu">-->
@@ -57,18 +61,24 @@
             <!--</li>-->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-                 <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-                        <input type="text" class="form-control" name="username" placeholder="İTÜ/Mail">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                        <input type="text" class="form-control" name="password" placeholder="Parola">
-                    </div>
-                    <button type="submit" class="btn btn btn-primary"><i class="fa fa-lg fa-sign-in" aria-hidden="true"></i></button>
-                    <button class="btn btn btn-default">?</button>
-                </form>
+                 {% if user.is_authenticated %}
+                     <li class="active"><a>Hoşgeldin {{ user.first_name }}!</a></li>
+                     <li><p class="navbar-btn"><a class="btn btn-primary"><i class="fa fa-lg fa-sign-out" aria-hidden="true"></i>Oturumu Kapat</a></p></li>
+                 {% else %}
+                     <form class="navbar-form" method="post" action=".">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                            <input type="text" class="form-control" name="username" placeholder="İTÜ/Mail">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input type="password" class="form-control" name="password" placeholder="Parola">
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-lg fa-sign-in" aria-hidden="true"></i>Oturum Aç</button>
+                        <button class="btn btn-default"><i class="fa fa-question" aria-hidden="true"></i></button>
+                    </form>
+                 {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -76,7 +86,7 @@
 
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
-            <p class="lead">Başlık</p>
+            <p class="lead text-center">{% block bodytitle %} {% endblock %}</p>
             <hr>
             {% block content %} {% endblock %}
         </div>
@@ -109,8 +119,12 @@
                        data-html="true"
                        data-original-title="hello 1-2-3"
                        style="color: white;"
-                       data-content="<div><p><i class='fa fa-fw fa-github' aria-hidden='true'></i> asdf</p><p><i class='fa fa-fw fa-coffee' aria-hidden='true'></i> bsdf</p></div>">
-                           <b><i class="fa fa-lg fa-cubes" aria-hidden="true"></i>Katkı vermek istiyorum!</b>
+                       data-content="<div>
+                                        <p><i class='fa fa-fw fa-github' aria-hidden='true'></i><b>monitu geliştiricilerine bir kahve ısmarla!</b></p>
+                                        <p>Kahve ısmarlayarak bir teşekkür edebilir, geliştiricilere motivasyon sağlayabilirsin.</p>
+                                        <p><i class='fa fa-fw fa-coffee' aria-hidden='true'></i> bsdf</p>
+                                    </div>">
+                           <b><i class="fa fa-lg fa-cubes" aria-hidden="true"></i>Bir parçası ol!</b>
                     </a>
                 </div>
             </div>
