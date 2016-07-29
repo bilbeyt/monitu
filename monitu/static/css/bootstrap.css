@@ -6766,7 +6766,7 @@ button.close {
   border-width: 0 1px 4px 1px;
   font-size: 12px;
   font-weight: bold;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .btn:hover {
   margin-top: 1px;
