@@ -132,6 +132,8 @@ STATICFILES_DIRS = [
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_AUTO_LOGIN = True
+LOGIN_URL = "/"
+LOGIN_REDIRECT_URL = "/home"
 
 # Crispy-Forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -141,4 +143,3 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-

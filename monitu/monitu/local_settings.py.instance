@@ -5,4 +5,3 @@ EMAIL_HOST_PASSWORD = "[password]"
 DEFAULT_FROM_EMAIL = "[sender email address]"
 SERVER_EMAIL = "[sender email address]"
 EMAIL_USE_TLS = True
-

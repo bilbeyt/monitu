@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from accounts import views
+from accounts.views import RegisterView
+from accounts.forms import LoginForm
 
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('registration.backends.default.urls'))
+    url(r'^$', RegisterView.as_view(template_name='home.html'), name='home'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'authentication_form': LoginForm}, name='login'),
+    url(r'^accounts/register/$', RegisterView.as_view(), name='register'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

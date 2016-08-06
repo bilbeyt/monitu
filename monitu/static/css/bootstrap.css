@@ -4010,7 +4010,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #ffffff;
+  background-color: #158cba;
   border-color: #158cba;
 }
 .nav .nav-divider {
@@ -6993,7 +6993,8 @@ label {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  border-color: transparent;
+  /*border-color: transparent;*/
+  border-color: #127ba3;
 }
 .nav-tabs > li > a {
   margin-top: 6px;
