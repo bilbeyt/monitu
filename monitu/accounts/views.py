@@ -15,3 +15,13 @@ class RegisterView(RegistrationView):
     form_class = RegisterForm
     context = None
 
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html', {})
+
+
+@login_required
+def itupass(request):
+    return render(request, 'itupass.html', {})
+
