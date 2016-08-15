@@ -2,15 +2,16 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    Hesap Oluştur
+Hesap Oluştur
 {% endblock title %}
 
 {% block content %}
-    <div class="col-md-4 col-md-offset-4 text-center well">
-        <p class="lead">Hesap Oluştur</p>
-        <hr>
-        <form method="post" action="{% url 'register' %}">
-            {% crispy form %}
-        </form>
-    </div>
+<div class="col-md-4 col-md-offset-4 text-center well">
+    <p class="lead">Hesap Oluştur</p>
+    <hr>
+    <form method="post" action="{% url 'register' %}">
+        {% crispy form %}
+    </form>
+</div>
 {% endblock %}
+

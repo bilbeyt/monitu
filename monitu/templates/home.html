@@ -2,31 +2,38 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    monitu
+monitu
 {% endblock title %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-8">
-            <div class="jumbotron">
-                  <h1>Jumbotron</h1>
-                    <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                      <p><a class="btn btn-primary btn-lg">Learn more</a></p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="well">
-                <p class="lead">Hesap Oluştur</p>
-                <form action="{% url 'register' %}" method="post">
-                    {% crispy form %}
-                </form>
-            </div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="jumbotron">
+            <h1>Jumbotron</h1>
+            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <hr>
-            <p class="lead">"Education is not the filling of a bucket, but the lighting of a fire."</p>
+    <div class="col-md-4">
+        <div class="well">
+            {% if user.is_authenticated %}
+            <p class="lead">Genel Görünüm</p>
+            <p class="lead">Dönem Görünümü</p>
+            {% else %}
+            <p class="lead">Hesap Oluştur</p>
+            <form action="{% url 'register' %}" method="post">
+                {% crispy form %}
+            </form>
+            <hr class="visible-xs visible-sm">
+            <p class="lead visible-xs visible-sm">Zaten <kbd>bir</kbd> <mark>hesabın</mark> var mı? | <a href="{% url 'login' %}"><i class="fa fa-sm fa-sign-in" aria-hidden="true"></i>Oturum Aç</a></p>
+            {% endif %}
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <hr>
+        <p class="lead">"Education is not the filling of a bucket, but the lighting of a fire."</p>
+    </div>
+</div>
 {% endblock %}
