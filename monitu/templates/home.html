@@ -8,17 +8,25 @@ monitu
 {% block content %}
 <div class="row">
     <div class="col-md-8">
-        <div class="jumbotron">
-            <h1>Jumbotron</h1>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+        <div class="jumbotron" style="">
+            <h1><strong style="font-family: 'Laila', serif;">Dersler takip altında</strong></h1>
+            <!--Dersler kontrolün altında!, Dersler takip altında-->
+            <p><span style="font-family: 'Laila', serif; color: #127BA3;">monitu</span> ile derslerinin kontrolü elinde! Bölüm ders planın veya okuduğun dönemler bazında aldığın tüm dersleri tek bir platform üzerinden yönetebilecek, gelecekteki ortalamanı şimdiden görebileceksin.</p>
+            <p>Detaylı bilgiye ve sıkça sorulan sorulara alt panelden ulaşabilirsin.</p>
         </div>
     </div>
     <div class="col-md-4">
         <div class="well">
             {% if user.is_authenticated %}
-            <p class="lead">Genel Görünüm</p>
-            <p class="lead">Dönem Görünümü</p>
+            <h4><a class="" href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Genel Görünüm</a></h4>
+            <p>Okuduğun bölümün ders planı üzerinden okulun ne alemde genel bir fikir edinebilirsin.</p>
+            <p>Kritik kararlar alman gerekebilir; dersleri renklendir, notlar al, hiçbir noktayı kaçırma!</p>
+            <hr>
+            <h4><a class="" href="#"><i class="fa fa-map-o" aria-hidden="true"></i>Dönem Görünümü</a></h4>
+            <p>Dönem bazında aldığın dersleri görebilir, gelecekteki ortalamanı hesaplayabilirsin.</p>
+            <p>Evet, zamanda yolculuk! Hoca da sözlüne 100 verse :P</p>
+            <hr>
+            <strong class="">Bu iki görünüm arasındaki geçişlerini dilediğin zaman üst panelden yapabilirsin.</strong>
             {% else %}
             <p class="lead">Hesap Oluştur</p>
             <form action="{% url 'register' %}" method="post">
