@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_AUTO_LOGIN = True
-LOGIN_URL = "/"
+LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
 
 # Crispy-Forms settings
