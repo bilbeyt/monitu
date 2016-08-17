@@ -44,8 +44,40 @@ class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_class = 'form-horizontal'
         self.helper.add_input(Submit('submit', 'Oturum Aç'))
         self.helper.layout = Layout(
             Field('username'),
             Field('password'),
         )
+
+
+class ITUPassForm(forms.Form):
+    itu_username = forms.CharField(
+            label = "İTÜ Kullanıcı Adı",
+            max_length = 30,
+            required = True,
+    )
+
+    itu_password = forms.CharField(
+            widget = forms.PasswordInput,
+            label = "İTÜ Parola",
+            max_length = 30,
+            required = True,
+    )
+
+    itu_pin = forms.CharField(
+            widget = forms.PasswordInput,
+            label = "İTÜ Pin",
+            max_length = 30,
+            required = True,
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(ITUPassForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.form_action = '.'
+
+        self.helper.add_input(Submit('submit', 'Giriş'))
+

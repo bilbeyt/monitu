@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.contrib.auth.views import login
 from django.contrib.auth.decorators import login_required
 
 from registration.backends.default.views import RegistrationView
-from .forms import RegisterForm
+from .forms import RegisterForm, ITUPassForm
 
 
 @login_required
@@ -23,5 +24,5 @@ def profile(request):
 
 @login_required
 def itupass(request):
-    return render(request, 'itupass.html', {})
+    return render(request, 'itupass.html', {'form': ITUPassForm})
 
