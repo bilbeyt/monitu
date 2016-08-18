@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -80,4 +82,3 @@ class ITUPassForm(forms.Form):
         self.helper.form_action = '.'
 
         self.helper.add_input(Submit('submit', 'Giriş'))
-
